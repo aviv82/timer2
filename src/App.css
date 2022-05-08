@@ -6,3 +6,11 @@
 .upper {
     display:flex;
 }
+.lower {
+    display:flex;
+    justify-content: center;    
+}
+.timer {
+    display: flex;
+    justify-content: center;
+}
