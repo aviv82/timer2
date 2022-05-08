@@ -42,10 +42,10 @@ return ()=> clearInterval(intervalID);
      
       </header>
       <Timer time={renderTime(time)} blink={blink}/>
-<Button click={()=> setTimerOn(true)}title="green" name="Start"/>
-<Button click={()=> setTimerOn(false)}title="red" name="Stop"/>
-<Button click={()=> setTimerOn(true)}title="blue" name="Resume"/>
-<Button click={()=> {timerId ===1?setTime(1500):timerId===2?setTime(1200):setTime(600); setTimerOn(false)}}title="blue" name="Reset"/>
+      {!timerOn && (time === 1500 || time === 1200 || time === 600)  && (<Button click={()=> setTimerOn(true)}title="green" name="Start"/>)}
+      {timerOn && (<Button click={()=> setTimerOn(false)}title="red" name="Stop"/>)}
+      {!timerOn && (time !== 1500 && time !== 1200 && time !== 600) && (<Button click={()=> setTimerOn(true)}title="blue" name="Resume"/>)}
+      {time !== 1500 && time !== 1200 && time !== 600 && (<Button click={()=> {timerId ===1?setTime(1500):timerId===2?setTime(1200):setTime(600); setTimerOn(false)}}title="blue" name="Reset"/>)}
     </div>
   );
 }
