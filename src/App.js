@@ -36,10 +36,11 @@ return ()=> clearInterval(intervalID);
       <h1>
         Timer App
       </h1>
+      <div className="upper">
 <Button click={()=> {setTime(1500); setTimerId(1)}} title="button"name="Focus"/>
 <Button click={()=> {setTime(1200); setTimerId(2)}} title="button"name="Long Break"/>
 <Button click={()=> {setTime(600); setTimerId(3)}} title="button"name="Short Break"/>
-     
+      </div>
       </header>
       <Timer time={renderTime(time)} blink={blink}/>
       {!timerOn && (time === 1500 || time === 1200 || time === 600)  && (<Button click={()=> setTimerOn(true)}title="green" name="Start"/>)}
