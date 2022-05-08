@@ -1,0 +1,14 @@
+.on {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity:1;
+    }   
+    100% {
+        opacity:0;
+    }
+} 

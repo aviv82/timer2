@@ -1,9 +1,15 @@
 import './Timer.css'
 
-export const Timer = ({time}) => {
+export const Timer = ({time, blink}) => {
+    let isBlink = 'off'
+    if(blink){
+        isBlink ='on';
+    } else {
+        isBlink = 'off';
+    };
     return(
 <div className="timer">
-    <h1 className="clock">{time.minutes}:{time.seconds}</h1>
+    <span className="clock">{time.minutes}</span><span className={isBlink}>:</span><span>{time.seconds}</span>
 </div>
 )
 }
