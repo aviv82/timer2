@@ -1,3 +1,9 @@
+.timer {
+    justify-self: center;
+    align-self: center;
+    position: absolute;
+}
+
 .on {
     animation-name: blink;
     animation-duration: 1s;

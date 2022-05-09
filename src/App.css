@@ -13,4 +13,14 @@
 .timer {
     display: flex;
     justify-content: center;
+    position:relative;
+}
+
+/* 720 */
+.circle path {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+stroke-dasharray: 720; 
+stroke-dashoffset: var(--x);  
 }

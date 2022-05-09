@@ -28,7 +28,15 @@ clearInterval(intervalID);
 return ()=> clearInterval(intervalID);
 },[timerOn])
 
-
+let counter = 0
+if(timerId===1) {
+  counter = time/2.08-720;
+}else if (timerId===2) {
+  counter = time/1.666-720
+} else if (timerId===3){
+  counter = time/.83-720;
+}
+let pound = {"--x": counter}
 
   return (
     <div className="App">
@@ -43,7 +51,10 @@ return ()=> clearInterval(intervalID);
       </div>
       </header>
       <div className='timer'>
-      <Timer time={renderTime(time)} blink={blink}/>
+<Timer time={renderTime(time)} blink={blink}/>
+      <svg style={pound}className='circle' width="242" height="225" viewBox="0 0 242 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M238 112.5C238 172.154 185.897 221 121 221C56.1033 221 4 172.154 4 112.5C4 52.8465 56.1033 4 121 4C185.897 4 238 52.8465 238 112.5Z" stroke="#5869FF" strokeWidth="8"/>
+</svg>
       </div>
       <div className='lower'>
       {!timerOn && (time === 1500 || time === 1200 || time === 600)  && (<Button click={()=> setTimerOn(true)}title="green" name="Start"/>)}
